@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>Technical Documentation Page</title>
+</head>
+
+<body class="container">
+  <nav id="navbar">
+    <header id="header-nav">C++ <br> Documentation</header>
+
+    <a class="nav-link" href="#History_of_C++">History of C++</a>
+    <h3>Introduction</h3>
+
+    <a href="#Compiler" class="nav-link">Compiler</a>
+    <h3>Basics of C++</h3>
+    <a href="#Structure_of_a_program" class="nav-link">Structure of a program</a>
+    <a href="#Variables_and_types" class="nav-link">Variables and types</a>
+    <a href="#Operators" class="nav-link">Operators</a>
+    <a href="#Basic_input/output" class="nav-link">Basic Input/Output</a>
+    <h3>More</h3>
+    <a href="#Reference" class="nav-link">Reference</a>
+
+
+  </nav>
+  <main id="main-doc">
+    <section class="main-section" id="History_of_C++">
+      <header>History of C++</header>
+      <p>
+        The C++ programming language has a history going back to 1979, when
+        Bjarne Stroustrup was doing work for his Ph.D. thesis. One of the
+        languages Stroustrup had the opportunity to work with was a language
+        called Simula, which as the name implies is a language primarily
+        designed for simulations. The Simula 67 language - which was the
+        variant that Stroustrup worked with - is regarded as the first
+        language to support the object-oriented programming paradigm.
+        Stroustrup found that this paradigm was very useful for software
+        development, however the Simula language was far too slow for
+        practical use.
+      </p>
+      <p>
+        In 1985, Stroustrup's reference to the language entitled The C++
+        Programming Language was published. That same year, C++ was
+        implemented as a commercial product. The language was not officially
+        standardized yet, making the book a very important reference. The
+        language was updated again in 1989 to include protected and static
+        members, as well as inheritance from several classes.
+      </p>
+    </section>
+    <section class="main-section" id="Compiler">
+      <header>Compiler</header>
+      <p>
+        The essential tools needed to follow these tutorials are a computer
+        and a compiler toolchain able to compile C++ code and build the
+        programs to run on it. C++ is a language that has evolved much over
+        the years, and these tutorials explain many features added recently to
+        the language. Therefore, in order to properly follow the tutorials, a
+        recent compiler is needed. It shall support (even if only partially)
+        the features introduced by the 2011 standard.
+      </p>
+      <p>
+        Computers understand only one language and that language consists of
+        sets of instructions made of ones and zeros. This computer language is
+        appropriately called machine language. A single instruction to a
+        computer could look like this:
+      </p>
+      <table>
+        <tr>
+          <td>00000</td>
+          <td>10011110</td>
+        </tr>
+        <tr>
+          <td>00001</td>
+          <td>11110100</td>
+        </tr>
+        <tr>
+          <td>00010</td>
+          <td>10011110</td>
+        </tr>
+        <tr>
+          <td>00011</td>
+          <td>11010100</td>
+        </tr>
+        <tr>
+          <td>00100</td>
+          <td>10111111</td>
+        </tr>
+        <tr>
+          <td>00101</td>
+          <td>00000000</td>
+        </tr>
+        </tr>
+      </table>
+      <p>As you can imagine, programming a computer directly in machine language using only ones and zeros is very
+        tedious and error prone. To make programming easier, high level languages have been developed. High level
+        programs also make it easier for programmers to inspect and understand each other's programs easier. This is a
+        portion of code written in C++ that accomplishes the exact same purpose:
+      </p>
+      <code>
+        int a, b, sum;
+
+        cin >> a;
+        cin >> b;
+
+        sum = a + b;
+        cout << sum << endl; </code> </section> <section class="main-section" id="Structure_of_a_program">
+          <header>Structure of a program</header>
+          <p>
+            The best way to learn a programming language is by writing programs. Typically, the first program beginners
+            write is a program called "Hello World", which simply prints "Hello World" to your computer screen. Although
+            it is very simple, it contains all the fundamental components C++ programs have:</p>
+          <code>// my first program in C++
+            #include <iostream>
+
+              int main()
+              {
+              std::cout << "Hello World!" ; }</code> <code>Hello World!</code>
+    </section>
+    <section class="main-section" id="Variables_and_types">
+      <header>Variables and types</header>
+      <p>Let's imagine that I ask you to remember the number 5, and then I ask you to also memorize the number 2 at the
+        same time. You have just stored two different values in your memory (5 and 2). Now, if I ask you to add 1 to the
+        first number I said, you should be retaining the numbers 6 (that is 5+1) and 2 in your memory. Then we could,
+        for example, subtract these values and obtain 4 as result. The whole process described above is a simile of what
+        a computer can do with two variables. The same process can be expressed in C++ with the following set of
+        statements:</p>
+      <code>
+        a = 5;
+        b = 2;
+        a = a + 1;
+        result = a - b;
+      </code>
+      <h3>Fundamental data types</h3>
+      <p>Fundamental data types are basic types implemented directly by the language that represent the basic storage
+        units supported natively by most systems. They can mainly be classified into:
+      </p>
+      <ul>
+        <li>Character types: They can represent a single character, such as 'A' or '$'. The most basic type is char,
+          which is a one-byte character. Other types are also provided for wider characters.</li>
+        <li>Numerical integer types: They can store a whole number value, such as 7 or 1024. They exist in a variety of
+          sizes, and can either be signed or unsigned, depending on whether they support negative values or not.</li>
+        <li>Floating-point types: They can represent real values, such as 3.14 or 0.01, with different levels of
+          precision, depending on which of the three floating-point types is used.</li>
+        <li>Boolean type: The boolean type, known in C++ as bool, can only represent one of two states, true or false.
+        </li>
+      </ul>
+      <h3>Declaration of variables</h3>
+      <p>
+        C++ is a strongly-typed language, and requires every variable to be declared with its type before its first use.
+        This informs the compiler the size to reserve in memory for the variable and how to interpret its value. The
+        syntax to declare a new variable in C++ is straightforward: we simply write the type followed by the variable
+        name (i.e., its identifier). For example:
+      </p>
+      <code>
+        int a;
+        float mynumber;
+      </code>
+      <p>
+        These are two valid declarations of variables. The first one declares a variable of type int with the identifier
+        a. The second one declares a variable of type float with the identifier mynumber. Once declared, the variables a
+        and mynumber can be used within the rest of their scope in the program. If declaring more than one variable of
+        the same type, they can all be declared in a single statement by separating their identifiers with commas. For
+        example:
+      </p>
+      <code>
+        int a, b, c;
+      </code>
+      <p>
+        This declares three variables (a, b and c), all of them of type int, and has exactly the same meaning as:
+      </p>
+      <code>
+        int a;
+        int b;
+        int c;
+      </code>
+      <p>
+        To see what variable declarations look like in action within a program, let's have a look at the entire C++ code
+        of the example about your mental memory proposed at the beginning of this chapter:
+      </p>
+      <code>
+        // operating with variables
+
+        #include <iostream>
+          using namespace std;
+
+          int main ()
+          {
+          // declaring variables:
+          int a, b;
+          int result;
+
+          // process:
+          a = 5;
+          b = 2;
+          a = a + 1;
+          result = a - b;
+
+          // print out the result:
+          cout << result; // terminate the program: return 0; } </code> <h3>
+            Initialization of variables
+            </h3>
+            <p>
+              When the variables in the example above are declared, they have an undetermined value until they are
+              assigned a value for the first time. But it is possible for a variable to have a specific value from the
+              moment it is declared. This is called the initialization of the variable.
+            </p>
+            <p>
+              In C++, there are three ways to initialize variables. They are all equivalent and are reminiscent of the
+              evolution of the language over the years:
+            </p>
+            <p>
+              The first one, known as c-like initialization (because it is inherited from the C language), consists of
+              appending an equal sign followed by the value to which the variable is initialized:
+            </p>
+            <p>
+              type identifier = initial_value;
+              For example, to declare a variable of type int called x and initialize it to a value of zero from the same
+              moment it is declared, we can write:
+            </p>
+            <code>
+              int x = 0;
+            </code>
+            <p>
+              A second method, known as constructor initialization (introduced by the C++ language), encloses the
+              initial value between parentheses (()):
+
+              type identifier (initial_value);
+              For example:
+            </p>
+            <code>
+
+              int x (0);
+            </code>
+            <p>
+              Finally, a third method, known as uniform initialization, similar to the above, but using curly braces
+              ({}) instead of parentheses (this was introduced by the revision of the C++ standard, in 2011):
+
+              type identifier {initial_value};
+              For example:
+            </p>
+            <code>
+              int x {0};
+            </code>
+            <p>
+              All three ways of initializing variables are valid and equivalent in C++.
+            </p>
+            <code>
+              // initialization of variables
+
+              #include <iostream>
+                using namespace std;
+
+                int main ()
+                {
+                int a=5; // initial value: 5
+                int b(3); // initial value: 3
+                int c{2}; // initial value: 2
+                int result; // initial value undetermined
+
+                a = a + b;
+                result = a - c;
+                cout << result; return 0; } </code> <h3>
+                  Introduction to strings
+                  </h3>
+                  <p>
+                    Fundamental types represent the most basic types handled by the machines where the code may run. But
+                    one of the major strengths of the C++ language is its rich set of compound types, of which the
+                    fundamental types are mere building blocks.
+
+                  </p>
+                  <p>
+                    An example of compound type is the string class. Variables of this type are able to store sequences
+                    of characters, such as words or sentences. A very useful feature!
+                  </p>
+                  <p>
+                    A first difference with fundamental data types is that in order to declare and use objects
+                    (variables) of this type, the program needs to include the header where the type is defined within
+                    the standard library (header <string>):
+
+
+                  </p>
+                  <code>
+                    // my first string
+                    #include <iostream>
+                      #include <string>
+                        using namespace std;
+
+                        int main ()
+                        {
+                        string mystring;
+                        mystring = "This is a string";
+                        cout << mystring; return 0; } </code> <code>
+                          This is a string
+                  </code>
+                  <p>
+                    Strings can also perform all the other basic operations that fundamental data types can, like being
+                    declared without an initial value and change its value during execution:
+                  </p>
+                  <code>
+                    // my first string
+                    #include <iostream>
+                      #include <string>
+                        using namespace std;
+
+                        int main ()
+                        {
+                        string mystring;
+                        mystring = "This is the initial string content";
+                        cout << mystring << endl; mystring="This is a different string content" ; cout << mystring <<
+                          endl; return 0; } </code> <code>
+                          This is the initial string content
+                          This is a different string content
+                  </code>
+
+    </section>
+    <section class="main-section" id="Operators">
+      <header>
+        Operators
+      </header>
+      <p>
+        Once introduced to variables and constants, we can begin to operate with them by using operators. What follows
+        is a complete list of operators. At this point, it is likely not necessary to know all of them, but they are all
+        listed here to also serve as reference.
+      </p>
+      <h3 id="Assigment_operator">
+        Assignment operator (=)
+      </h3>
+      <p>
+        The assignment operator assigns a value to a variable.
+      </p>
+      <code>
+        x = 5;
+      </code>
+      <p>
+        This statement assigns the integer value 5 to the variable x. The assignment operation always takes place from
+        right to left, and never the other way around:
+      </p>
+      <code>
+        x = y;
+      </code>
+      <p>
+        This statement assigns to variable x the value contained in variable y. The value of x at the moment this
+        statement is executed is lost and replaced by the value of y.
+
+      </p>
+      <p>
+        Consider also that we are only assigning the value of y to x at the moment of the assignment operation.
+        Therefore, if y changes at a later moment, it will not affect the new value taken by x.
+      </p>
+      <p>
+        For example, let's have a look at the following code - I have included the evolution of the content stored in
+        the variables as comments:
+      </p>
+      <code>
+        // assignment operator
+        #include <iostream>
+          using namespace std;
+
+          int main ()
+          {
+          int a, b; // a:?, b:?
+          a = 10; // a:10, b:?
+          b = 4; // a:10, b:4
+          a = b; // a:4, b:4
+          b = 7; // a:4, b:7
+
+          cout << "a:" ; cout << a; cout << " b:" ; cout << b; } </code> <code>
+            a:4 b:7
+      </code>
+      <p>
+        This program prints on screen the final values of a and b (4 and 7, respectively). Notice how a was not affected
+        by the final modification of b, even though we declared a = b earlier.
+      </p>
+      <p>
+        Assignment operations are expressions that can be evaluated. That means that the assignment itself has a value,
+        and -for fundamental types- this value is the one assigned in the operation. For example:
+      </p>
+      <code>
+
+        y = 2 + (x = 5);
+      </code>
+      <p>
+        In this expression, y is assigned the result of adding 2 and the value of another assignment expression (which
+        has itself a value of 5). It is roughly equivalent to:
+      </p>
+      <code>
+        x = 5;
+        y = 2 + x;
+      </code>
+      <p>
+        With the final result of assigning 7 to y.
+      </p>
+      <p>
+        The following expression is also valid in C++:
+      </p>
+      <code>
+
+        x = y = z = 5;
+      </code>
+      <p>
+        It assigns 5 to the all three variables: x, y and z; always from right-to-left.
+      </p>
+
+      <h3 id="Arithmetic_operators">
+        Arithmetic operators ( +, -, *, /, % )
+      </h3>
+      <p>
+        The five arithmetical operations supported by C++ are:
+      </p>
+      <table>
+        <tr>
+          <th>operator</th>
+          <th>description</th>
+        </tr>
+        <tr>
+          <td>+</td>
+          <td>addition</td>
+        </tr>
+        <tr>
+          <td>-</td>
+          <td>
+            subtraction
+          </td>
+        </tr>
+        <tr>
+          <td>*</td>
+          <td>multiplication</td>
+        </tr>
+        <tr>
+          <td>/</td>
+          <td>division</td>
+        </tr>
+        <tr>
+          <td>%</td>
+          <td>modulo</td>
+        </tr>
+      </table>
+      <p>
+        Operations of addition, subtraction, multiplication and division correspond literally to their respective
+        mathematical operators. The last one, modulo operator, represented by a percentage sign (%), gives the remainder
+        of a division of two values. For example:
+      </p>
+      <code>
+        x = 11 % 3;
+      </code>
+      <p>
+        results in variable x containing the value 2, since dividing 11 by 3 results in 3, with a remainder of 2.
+      </p>
+      <h3 id="Compound_assignment">
+        Compound Assignment
+      </h3>
+      <p>
+        Compound assignment operators modify the current value of a variable by performing an operation on it. They are
+        equivalent to assigning the result of an operation to the first operand:
+
+      </p>
+      <table>
+        <tr>
+          <th>expression</th>
+          <th>equivalent to...</th>
+        </tr>
+        <tr>
+          <td>y += x;</td>
+          <td>
+            y = y + x;
+          </td>
+        </tr>
+        <tr>
+          <td>
+            x -= 5;
+          </td>
+          <td>
+            x = x - 5;
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            x /= y;
+          </td>
+          <td>
+            x = x / y;
+          </td>
+        </tr>
+        <tr>
+          <td>price *= units + 1;</td>
+          <td>
+            price = price * (units+1);
+          </td>
+        </tr>
+      </table>
+      <p>
+        and the same for all other compound assignment operators. For example:
+
+      </p>
+      <code>
+        // compound assignment operators
+        #include <iostream>
+          using namespace std;
+
+          int main ()
+          {
+          int a, b=3;
+          a = b;
+          a+=2; // equivalent to a=a+2
+          cout << a; } </code> <code>5</code>
+      <h3 id="Increment_and_decrement">Increment and decrement (++, --)</h3>
+      <p>
+        Some expression can be shortened even more: the increase operator (++) and the decrease operator (--) increase
+        or reduce by one the value stored in a variable. They are equivalent to +=1 and to -=1, respectively. Thus:
+
+      </p>
+      <code>
+        ++x;
+        x+=1;
+        x=x+1;
+      </code>
+      <p>
+        are all equivalent in its functionality; the three of them increase by one the value of x.
+
+      </p>
+      <h3 id="Relational_and_comparison_operators">Relational and comparison operators ( ==, !=, >, <,>=, <=)</h3> <p>
+            Two expressions can be compared using relational and equality operators. For example, to know if two values
+            are equal or if one is greater than the other.
+            </p>
+            <p>
+              The result of such an operation is either true or false (i.e., a Boolean value).
+
+            </p>
+
+            <p>
+              The relational operators in C++ are:
+
+            </p>
+            <table>
+              <tr>
+                <th>operator</th>
+                <th>description</th>
+              </tr>
+              <tr>
+                <td>==</td>
+                <td>Equal to</td>
+              </tr>
+              <tr>
+                <td>!=</td>
+                <td>Not equal to</td>
+              </tr>
+              <tr>
+                <td>
+                  <</td> <td>Less than
+                </td>
+              </tr>
+              <tr>
+                <td>></td>
+                <td>Greater than</td>
+              </tr>
+              <tr>
+                <td>
+                  <=</td> <td>Less than or equal to
+                </td>
+              </tr>
+              <tr>
+                <td>>=</td>
+                <td>Greater than or equal to</td>
+              </tr>
+            </table>
+            <p>
+              Here there are some examples:
+            </p>
+            <code>
+              (7 == 5) // evaluates to false
+              (5 > 4) // evaluates to true
+              (3 != 2) // evaluates to true
+              (6 >= 6) // evaluates to true
+              (5 < 5) // evaluates to false </code> <h3 id="Logical_operators">Logical operators (!, &&, ||)</h3>
+      <p>
+        The operator ! is the C++ operator for the Boolean operation NOT. It has only one operand, to its right, and
+        inverts it, producing false if its operand is true, and true if its operand is false. Basically, it returns the
+        opposite Boolean value of evaluating its operand. For example:
+      </p>
+      <code>
+        !(5 == 5) // evaluates to false because the expression at its right (5 == 5) is true
+        !(6 <= 4) // evaluates to true because (6 <=4) would be false !true // evaluates to false !false // evaluates to
+          true </code> </section> <section class="main-section" id="Basic_input/output">
+          <header>Basic Input/Output</header>
+          <p>
+            The example programs of the previous sections provided little interaction with the user, if any at all. They
+            simply printed simple values on screen, but the standard library provides many additional ways to interact
+            with the user via its input/output features. This section will present a short introduction to some of the
+            most useful.
+
+          </p>
+          <p>
+            C++ uses a convenient abstraction called streams to perform input and output operations in sequential media
+            such as the screen, the keyboard or a file. A stream is an entity where a program can either insert or
+            extract characters to/from. There is no need to know details about the media associated to the stream or any
+            of its internal specifications. All we need to know is that streams are a source/destination of characters,
+            and that these characters are provided/accepted sequentially (i.e., one after another).
+
+          </p>
+          <p>
+            The standard library defines a handful of stream objects that can be used to access what are considered the
+            standard sources and destinations of characters by the environment where the program runs:
+
+          </p>
+          <table>
+            <tr>
+              <th>stream</th>
+              <th>description</th>
+            </tr>
+            <tr>
+              <td>cin</td>
+              <td>standard input stream</td>
+            </tr>
+            <tr>
+              <td>cout</td>
+              <td>standard output stream</td>
+            </tr>
+            <tr>
+              <td>
+                cerr
+              </td>
+              <td>standard error (output) stream</td>
+            </tr>
+            <tr>
+              <td>clog</td>
+              <td>standard logging (output) stream</td>
+            </tr>
+
+          </table>
+          <p>
+            We are going to see in more detail only cout and cin (the standard output and input streams); cerr and clog
+            are also output streams, so they essentially work like cout, with the only difference being that they
+            identify streams for specific purposes: error messages and logging; which, in many cases, in most
+            environment setups, they actually do the exact same thing: they print on screen, although they can also be
+            individually redirected.
+
+          </p>
+          <h3 id="Standard_output">Standard output (cout)</h3>
+          <p>
+            On most program environments, the standard output by default is the screen, and the C++ stream object
+            defined to access it is cout.
+          </p>
+          <p>
+            For formatted output operations, cout is used together with the insertion operator, which is written as <<
+              (i.e., two "less than" signs). </p> <code>
+              cout << "Output sentence" ; // prints Output sentence on screen cout << 120; // prints number 120 on
+                screen cout << x; // prints the value of x on screen </code> <h3 id="Standard_input">Standard input
+                (cin)</h3>
+                <p>
+                  In most program environments, the standard input by default is the keyboard, and the C++ stream object
+                  defined to access it is cin.
+                </p>
+                <p>
+                  For formatted input operations, cin is used together with the extraction operator, which is written as
+                  >> (i.e., two "greater than" signs). This operator is then followed by the variable where the
+                  extracted data is stored. For example:
+
+                </p>
+                <code>
+                  int age;
+                  cin >> age;
+                </code>
+                <p>
+                  The first statement declares a variable of type int called age, and the second extracts from cin a
+                  value to be stored in it. This operation makes the program wait for input from cin; generally, this
+                  means that the program will wait for the user to enter some sequence with the keyboard. In this case,
+                  note that the characters introduced using the keyboard are only transmitted to the program when the
+                  ENTER (or RETURN) key is pressed. Once the statement with the extraction operation on cin is reached,
+                  the program will wait for as long as needed until some input is introduced.
+
+                </p>
+                <p>
+                  The extraction operation on cin uses the type of the variable after the >> operator to determine how
+                  it interprets the characters read from the input; if it is an integer, the format expected is a series
+                  of digits, if a string a sequence of characters, etc.
+                </p>
+                <code>
+                  // i/o example
+
+                  #include <iostream>
+                    using namespace std;
+
+                    int main ()
+                    {
+                    int i;
+                    cout << "Please enter an integer value: " ; cin>> i;
+                      cout << "The value you entered is " << i; cout << " and its double is " << i*2 << ".\n" ; return
+                        0; } </code> <code>
+                        Please enter an integer value: 702
+                        The value you entered is 702 and its double is 1404.
+                </code>
+    </section>
+    <section class="main-section" id="Reference">
+      <header ">Reference</header>
+        <ul> 
+                 <li>
+               
+          All the documentation in this page is taken from <a href = "//www.cplusplus.com/">cplusplus.com </a>. </li>
+        </section> </main> <!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js">
+        </script> -->
+</body>
+
+</html>
