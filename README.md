@@ -8,6 +8,6 @@ A single page static website created with HTML and plain CSS
 * Introduction
 * Basics
 
-## Creation Date
+## Date Created
 
 May 16, 2021
